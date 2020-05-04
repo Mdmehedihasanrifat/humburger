@@ -1,0 +1,172 @@
+.menu-wrap{
+
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+
+
+.menu-wrap .toggler{
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity:0;
+  z-index:2;
+
+
+
+}
+
+.menu-wrap .humburger{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+/*linefor menu*/
+.menu-wrap .humburger >div{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 2px;
+  background-color: white;
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease;
+  z-index: 1;
+
+
+}
+
+
+.menu-wrap .toggler:checked~.menu{
+visibility: visible;
+
+
+}
+
+.menu-wrap .toggler:checked~.menu>div{
+
+  transform: scale(1);
+  transition: all .4s;
+
+
+}
+
+
+.menu-wrap .toggler:checked~.menu>div>div{
+
+  opacity: 1;
+  transition: opacity .4s ease .4s;
+
+}
+.menu-wrap .humburger >div:before,
+.menu-wrap .humburger >div:after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  flex: none;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+}
+.menu-wrap .humburger >div:after{
+
+  top:10px
+}
+/*end of three line*/
+.menu-wrap .toggler:checked +.humburger>div{
+transform: rotate(135deg);
+
+}
+.menu-wrap .toggler:checked +.humburger>div:before,
+.menu-wrap .toggler:checked +.humburger>div:after{
+  top:0;
+  transform: rotate(90deg);
+
+}
+.menu-wrap .toggler:checked:hover + .humburger>div{
+
+  transform: rotate(225deg);
+}
+
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+visibility: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.menu-wrap .menu>div{
+
+  background-color: var(--backgroud-color);
+  width: 200vw;
+  height: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all .5s ease;
+}
+.menu-wrap .menu>div>div{
+
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity .4s ease;
+
+}
+.menu-wrap .menu>div>div>ul>li{
+
+
+  list-style: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+
+}
+.menu-wrap .menu>div>div>ul>li a{
+
+  color: white;
+  text-decoration: white;
+  transition: color .4s ease-in;
+}
+.menu-wrap .menu>div>div>ul>li a:hover{
+
+
+  color: var(--secondary-color);
+}
